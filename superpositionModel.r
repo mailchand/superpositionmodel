@@ -66,7 +66,7 @@ acc_sync = function(d=865, c=100, mu=0.08, sigma2=10.5)
     pinvGauss(d, nu=c/mu, lambda=c*c/sigma2)
 }
 
-acc_sync()
+acc_sync(d=865, c=100, mu=0.08, sigma2=10.5)
 
 #
 # Accuracy in unimodal and synchronous stimuli (Eq. 8)
@@ -112,7 +112,7 @@ acc_async = function(d=865, c=100, mua=0.09, sigmaa2=11.3, mub=0.29, sigmab2=77.
 	c(acc=p1 + p2 + p3 - p4 - p5, p2=p2, p3=p3, p4=p4, p5=p5)
 }
 
-acc_async()[1]
+acc_async(d=865, c=100, mua=0.09, sigmaa2=11.3, mub=0.29, sigmab2=77.9, tau=240)[1]
 
 #
 # Mean RT in unimodal and synchronous stimuli
@@ -129,7 +129,7 @@ mrt_sync = function(d=865, c=100, mu=0.09, sigma2=11.3, mum=336)
 	ed/pd + mum
 }
 
-mrt_sync()
+mrt_sync(d=865, c=100, mu=0.09, sigma2=11.3, mum=336)
 
 #
 # Mean RT in asynchronous stimuli (Eq. 10)
@@ -176,4 +176,5 @@ mrt_async = function(d=865, c=100, mua=0.09, sigmaa2=11.3, mub=0.29, sigmab2=77.
 	unname(1/p['acc'] * {Htau + tauwG + minuends - q1 + q2 + q3 - q4} + mum)
 }
 
-mrt_async()
+mrt_async(d=865, c=100, mua=0.09, sigmaa2=11.3, mub=0.29, sigmab2=77.9, 
+	mum=336, tau=240)
